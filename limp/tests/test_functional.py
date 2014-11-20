@@ -1,6 +1,6 @@
 from unittest import TestCase
 from webtest import TestApp
-from succulentchinesemeal.tests import FunctionalTest
+from limp.tests import FunctionalTest
 
 
 class TestRootController(FunctionalTest):

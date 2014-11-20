@@ -1,5 +1,5 @@
 from pecan import make_app
-from succulentchinesemeal import model
+from limp import model
 
 
 def setup_app(config):

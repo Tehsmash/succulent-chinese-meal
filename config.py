@@ -6,10 +6,10 @@ server = {
 
 # Pecan Application Configurations
 app = {
-    'root': 'succulentchinesemeal.controllers.root.RootController',
-    'modules': ['succulentchinesemeal'],
+    'root': 'limp.controllers.root.RootController',
+    'modules': ['limp'],
     'static_root': '%(confdir)s/public',
-    'template_path': '%(confdir)s/succulentchinesemeal/templates',
+    'template_path': '%(confdir)s/limp/templates',
     'debug': True,
     'errors': {
         404: '/error/404',
@@ -20,7 +20,7 @@ app = {
 logging = {
     'root': {'level': 'INFO', 'handlers': ['console']},
     'loggers': {
-        'succulentchinesemeal': {'level': 'DEBUG', 'handlers': ['console']},
+        'limp': {'level': 'DEBUG', 'handlers': ['console']},
         'pecan.commands.serve': {'level': 'DEBUG', 'handlers': ['console']},
         'py.warnings': {'handlers': ['console']},
         '__force_dict__': True

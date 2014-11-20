@@ -6,8 +6,8 @@ server = {
 
 # Pecan Application Configurations
 app = {
-    'root': 'succulentchinesemeal.controllers.root.RootController',
-    'modules': ['succulentchinesemeal'],
+    'root': 'limp.controllers.root.RootController',
+    'modules': ['limp'],
     'static_root': '%(confdir)s/../../public',
     'template_path': '%(confdir)s/../templates',
     'debug': True,
