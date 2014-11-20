@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('horizon', [
+    'ui.bootstrap',
     'ngRoute',
     'ngMessages',
     'ComputeController',
