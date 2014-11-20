@@ -1,12 +1,12 @@
-<html>
+<html ng-app="horizon">
   <head>
     <link rel="stylesheet" type="text/css" href="app.css" />
   </head>
   <body>
     <div id="content">
       <ul class="menu">
-        <li><a href="#/compute">compute</a></li>
-        <li><a href="#/networks">networks</a></li>
+        <li><a href="#/compute">Compute</a></li>
+        <li><a href="#/networks">Networks</a></li>
       </ul>
       <div ng-view></div>
     </div>
@@ -15,6 +15,5 @@
     <script src="/js/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="compute/compute.js"></script>
-    <script src="view2/view2.js"></script>
   </body>
 </html>
