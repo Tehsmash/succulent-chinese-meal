@@ -1,16 +1,25 @@
-from pecan import expose, redirect
+from pecan import expose, redirect, abort
+from pecan.rest import RestController
 from webob.exc import status_map
 import uuid
 
-class NetworksController(object):
+networks = []
+num = 5
+while num > 0:
+    networks.append(dict(id = str(uuid.uuid4()), name = "I am a Network"))
+    num = num - 1
+
+class NetworksController(RestController):
 
     @expose('json')
-    def index(self):
-        networks = []
-        num = 5
-        while num > 0:
-            networks.append(dict(id = str(uuid.uuid4()), name = "I am a Network"))
-            num = num - 1
+    def get_one(self, id):
+        for network in networks:
+            if network['id'] == id:
+                return network
+        abort(404)
+
+    @expose('json')
+    def get_all(self):
         return networks
 
 class RootController(object):
