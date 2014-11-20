@@ -1,0 +1,8 @@
+<div ng-controller="NetworksCtrl">
+  <table border="1" style="width:100%" >
+    <tr ng-repeat="network in networks">
+      <td><a href="#/networks/{{network.id}}">{{network.id}}</td>
+      <td>{{network.name}}</td> 
+    </tr>
+  </table>
+</div>

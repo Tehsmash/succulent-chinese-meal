@@ -5,6 +5,8 @@ var horizon = angular.module('horizon', [
     'ngRoute',
     'ngMessages',
     'horizon.compute',
+    'horizon.networks',
+    'networksServices',
 ])
 
 horizon.config(['$routeProvider', function($routeProvider) {
