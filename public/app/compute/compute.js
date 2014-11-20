@@ -3,34 +3,47 @@
 var compute = angular.module('horizon.compute', ['ngRoute'])
 
 compute.config(['$routeProvider', function($routeProvider) {
-  .when('/compute', {
-    templateUrl: 'compute/compute.html',
-    controller: 'ComputeController'
-  });
+  $routeProvider
+    .when('/compute/launch_instance', {
+      templateUrl: 'compute/launch_instance.html',
+      controller: 'LaunchInstancesController'
+    })
+    .when('/compute', {
+      templateUrl: 'compute/compute.html',
+      controller: 'ComputeController'
+    })
+    .otherwise({
+      redirectTo: '/compute'
+    });
 }])
 
-compute.controller('ComputeController', function($scope, instanceFactory) {
+compute.controller('ComputeController', function($scope, instancesFactory) {
 
-  $scope.instances = instanceFactory.getInstances();
+  $scope.instances = instancesFactory.getInstances();
 
-  // Create a instance from the instance object
+  // Clear filter
+  $scope.clearFilter = function(){
+    $scope.filter = null;
+  }
+
+  // Delete an instance
+  $scope.deleteInstance = function(index) {
+    instancesFactory.deleteInstance(index);
+  }
+}),
+  
+compute.controller('LaunchInstancesController', function($scope, instancesFactory) {
+   $scope.instances = instancesFactory.getInstances();
+
+  // Create an instance from the instance object
   $scope.createInstance = function() {
     var uuid = Math.random().toString(36).substring(7);
     var instance = {
       uuid: uuid, 
       name: $scope.instance.name || uuid,
     };
-    instanceFactory.setInstance(instance);
+    instancesFactory.setInstance(instance);
     $scope.newInstance();
-  }
-
-  $scope.clearFilter = function(){
-    $scope.filter = null;
-  }
-
-  // Delete a instance
-  $scope.deleteInstance = function(index) {
-    instanceFactory.deleteInstance(index);
   }
 
   // Initialise empty instance object. 
@@ -38,9 +51,8 @@ compute.controller('ComputeController', function($scope, instanceFactory) {
     $scope.instance = {
       uuid: null,
       name: null,
-      adminState: true
     };  
   }
 
-  $scope.newInstance();
+  $scope.newInstance(); 
 });

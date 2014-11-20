@@ -6,7 +6,7 @@ var horizon = angular.module('horizon', [
     'ngMessages',
     'horizon.compute',
     'horizon.networks',
-    'networksServices',
+    'networksServices'
 ])
 
 horizon.config(['$routeProvider', function($routeProvider) {
@@ -15,3 +15,5 @@ horizon.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/' 
     });
 }]);
+
+horizon.factory('instancesFactory', instancesFactory);

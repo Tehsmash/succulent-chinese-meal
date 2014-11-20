@@ -1,2 +1,27 @@
 <h2>Compute</h2>
 
+<a class="button small success" href='#/compute/launch_instance'>Launch Instance</a>
+
+
+<div class="row collapse">
+  <div class="small-10 columns">
+    <input type="text" ng-model="filter" placeholder="Filter">
+  </div>
+  <div class="small-2 columns">
+    <a class="button small postfix" ng-click="clearFilter()">Clear</a>
+  </div>
+</div>
+
+
+<table>
+  <tr>
+    <th>UUID</th>
+    <th>Name</th>
+  </tr>
+  <tr ng-repeat="n in instances | filter:filter" >
+    <td>{{ n.uuid }}</td>
+    <td>{{ n.name }}</td>
+    <td><a ng-click="deleteInstance($index)">Delete</a></td>
+  </tr>
+</table>
+

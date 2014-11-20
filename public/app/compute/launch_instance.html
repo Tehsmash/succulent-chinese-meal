@@ -1,0 +1,19 @@
+<h2>Launch Instance</h2>
+
+<form name="createInstanceForm" ng-submit="createInstance()">
+  <input type="text" 
+    name="name" 
+    ng-model="instance.name" 
+    ng-minlength="3" 
+    ng-required="true" 
+    placeholder="Name">
+  <a class="button small success" ng-click="createInstance()" ng-disabled="createInstanceForm.$invalid">Create</a>
+
+  <div ng-messages="createInstanceForm.name.$error" style="color:red">
+    <span ng-message="minlength">Name must be at least 3 characters long</span>
+  </div>
+</form>
+
+
+<a class="button small" href='#/compute'>Back</a>
+

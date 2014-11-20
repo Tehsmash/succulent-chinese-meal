@@ -1,8 +1,8 @@
 'use strict';
-function instanceFactory() {
+function instancesFactory() {
   var instances = [];
 
-  for(var i = 0; i < 1000; i++) {
+  for(var i = 0; i < 10; i++) {
     var n = {
       uuid: i, 
       name: ("test" + i.toString()),
@@ -11,15 +11,15 @@ function instanceFactory() {
   }
 
   return {
-    getNetworks:function() {
+    getInstances:function() {
       return instances;    
     },
 
-    setNetwork:function(n) {
+    setInstance:function(n) {
       instances.push(n);
     },
 
-    deleteNetwork:function(i) {
+    deleteInstance:function(i) {
       instances.splice(i, 1);
     }
   }
