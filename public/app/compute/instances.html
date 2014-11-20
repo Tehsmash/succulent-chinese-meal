@@ -1,17 +1,18 @@
-<h1>Compute</h1>
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+  <li role="menuitem" class="current">Instances</li>
+</nav>
 
-<a class="button small success" href='#/compute/launch_instance'>Launch Instance</a>
-
-
-<div class="row collapse">
-  <div class="small-10 columns">
+<div class="row">
+  <div class="small-7 columns no-padding">
     <input type="text" ng-model="filter" placeholder="Filter">
   </div>
-  <div class="small-2 columns">
+  <div class="small-2 columns no-padding">
     <a class="button small postfix" ng-click="clearFilter()">Clear</a>
   </div>
+  <div class="small-3 columns no-padding-right">
+    <a class="button small success postfix" href='#/compute/launch_instance'>Launch Instance</a>
+  </div>
 </div>
-
 
 <table>
   <tr>

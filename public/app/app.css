@@ -1,16 +1,30 @@
 .view {
-  margin: 0px 10px;
+  margin: 10px 10px 0px;
 }
 
 .inner-wrap {
   min-height: 100%;
 }
 
-.left-small{
+.left-small {
   text-align: center;
 }
 
 .left-small > .fa-bars {
   font-size: 30px;
   line-height: 45px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+.no-padding-right {
+  padding-right: 0px;
+}
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.breadcrumbs {
+  margin: 0px 0px 10px;
 }

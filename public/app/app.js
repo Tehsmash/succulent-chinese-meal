@@ -9,11 +9,5 @@ var horizon = angular.module('horizon', [
     'networksServices'
 ])
 
-horizon.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-    .otherwise({ 
-      redirectTo: '/' 
-    });
-}]);
-
 horizon.factory('instancesFactory', instancesFactory);
+

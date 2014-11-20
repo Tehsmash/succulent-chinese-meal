@@ -1,0 +1,26 @@
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+  <li role="menuitem"><a href="#/compute">Instances</a></li>
+  <li role="menuitem" class="current">Launch Instance</li>
+</nav>
+
+<form name="launchInstanceForm" ng-submit="createInstance()">
+  <div class="row">
+    <div class="small-12">
+      <label>Name*
+        <input type="text" 
+          name="name" 
+          ng-model="instance.name" 
+          ng-minlength="4"
+          ng-required="true">
+      </label>
+    </div>
+  </div>
+
+  <a class="button small success" ng-click="createInstance()" ng-disabled="launchInstanceForm.$invalid">Create</a>
+
+  <div ng-messages="launchInstanceForm.name.$error">
+    <span ng-message="required">Name is required</span>
+    <span ng-message="minlength">Name must be at least 4 characters long</span>
+  </div>
+</form>
+

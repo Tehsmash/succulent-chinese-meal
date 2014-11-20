@@ -5,19 +5,19 @@ var compute = angular.module('horizon.compute', ['ngRoute'])
 compute.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/compute/launch_instance', {
-      templateUrl: 'compute/launch_instance.html',
+      templateUrl: 'compute/launch-instance.html',
       controller: 'LaunchInstancesController'
     })
     .when('/compute', {
-      templateUrl: 'compute/compute.html',
-      controller: 'ComputeController'
+      templateUrl: 'compute/instances.html',
+      controller: 'InstancesController'
     })
     .otherwise({
       redirectTo: '/compute'
     });
 }])
 
-compute.controller('ComputeController', function($scope, instancesFactory) {
+compute.controller('InstancesController', function($scope, instancesFactory) {
 
   $scope.instances = instancesFactory.getInstances();
 
@@ -33,7 +33,7 @@ compute.controller('ComputeController', function($scope, instancesFactory) {
 }),
   
 compute.controller('LaunchInstancesController', function($scope, instancesFactory) {
-   $scope.instances = instancesFactory.getInstances();
+  $scope.instances = instancesFactory.getInstances();
 
   // Create an instance from the instance object
   $scope.createInstance = function() {
@@ -55,4 +55,16 @@ compute.controller('LaunchInstancesController', function($scope, instancesFactor
   }
 
   $scope.newInstance(); 
+})
+
+compute.controller('InstanceDetailsController', function($scope, instancesFactory) {
+  $scope.instances = instancesFactory.getInstances();
+
+  $scope.getInstance = function(index) {
+    var instance = $scope.instances[index];
+    return instance;
+  }
+
 });
+
+
