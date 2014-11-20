@@ -4,13 +4,9 @@ from webob.exc import status_map
 
 class RootController(object):
 
-    @expose(generic=True, template='index.html')
+    @expose(generic=True)
     def index(self):
-        return dict()
-
-    @index.when(method='POST')
-    def index_post(self, q):
-        redirect('http://pecan.readthedocs.org/en/latest/search.html?q=%s' % q)
+        redirect('app/index.html')
 
     @expose('error.html')
     def error(self, status):
