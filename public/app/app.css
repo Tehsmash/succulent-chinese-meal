@@ -1,0 +1,12 @@
+.inner-wrap {
+  min-height: 100%;
+}
+
+.left-small{
+  text-align: center;
+}
+
+.left-small > .fa-bars {
+  font-size: 30px;
+  line-height: 45px;
+}

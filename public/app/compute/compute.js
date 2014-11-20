@@ -10,6 +10,8 @@ compute.config(['$routeProvider', function($routeProvider) {
     });
 }])
 
-compute.controller('ComputeController', function() {
+compute.controller('ComputeController', function($scope) {
+  
+
 
 });
