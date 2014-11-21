@@ -8,7 +8,7 @@ compute.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'compute/launch-instance.html',
       controller: 'LaunchInstancesController'
     })
-    .when('/compute', {
+    .when('/instances', {
       templateUrl: 'compute/instances.html',
       controller: 'InstancesController'
     })
