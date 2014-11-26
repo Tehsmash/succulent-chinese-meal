@@ -6,8 +6,6 @@ var horizon = angular.module('horizon', [
     'ngMessages',
     'horizon.compute',
     'horizon.networks',
-    'networksServices'
-])
-
-horizon.factory('instancesFactory', instancesFactory);
-
+    'networksServices',
+    'computeServices'
+]);
